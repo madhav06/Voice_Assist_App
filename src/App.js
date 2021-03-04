@@ -45,13 +45,8 @@ const App = () => {
   return (
     <div>
       <div className={classes.logoContainer}>
-        {newsArticles.length ? (
-          <div className={classes.infoContainer}>
-            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Open article number [4]</Typography></div>
-            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
-          </div>
-        ) : null}
-        <img src="https://github.com/madhav06/projectImages/blob/master/alan.jpg" className={classes.alanLogo} alt="logo" />
+        
+        <img src="https://github.com/madhav06/projectImages/blob/master/alan.jpg" className={classes.alanLogo} alt="alan logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
