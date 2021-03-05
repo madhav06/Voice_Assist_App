@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography } from '@material-ui/core';
 import wordsToNumbers from 'words-to-numbers';
 import alanBtn from '@alan-ai/alan-sdk-web';
-
+import alan from './images/alan.png';
 import logo from './images/logo.png';
 import { NewsCards, Modal } from './components';
 import useStyles from './styles';
@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     alanBtn({
-      key: 'alanKey',
+      key: '64370f4c903e66c5b517887fefa45c1b2e956eca572e1d8b807a3e2338fdd0dc/stage',
       onCommand: ({ command, articles, number }) => {
         if (command === 'newHeadlines') {
           setNewsArticles(articles);
@@ -45,8 +45,14 @@ const App = () => {
   return (
     <div>
       <div className={classes.logoContainer}>
-        
-        <img src="https://github.com/madhav06/projectImages/blob/master/alan.jpg" className={classes.alanLogo} alt="alan logo" />
+        {newsArticles.length ? (
+          <div className={classes.infoContainer}>
+            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Open article number [4]</Typography></div>
+            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
+          </div>
+        ) : null}
+        <h1>Voice News Broadcaster Using Alan AI</h1>
+        <img className={classes.image} src={alan} height="90px" alt="alan" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -54,10 +60,10 @@ const App = () => {
         <div className={classes.footer}>
           <Typography variant="body1" component="h2">
             Created by
-            <a className={classes.link} href="https://www.linkedin.com/in/pandit-madhv-a7809a8b/"> Madhav Pandit</a> -
-            <a className={classes.link} href="https://github.com/madhav06/voice_assist_app"> MIT License</a>
+            <a className={classes.link} href="https://www.linkedin.com/in/adrian-hajdin/"> Madhav Nandan</a> -
+            <a className={classes.link} href="https://github.com/madhav06/projectImages/blob/master/mit.png"> MIT License</a>
           </Typography>
-          <img className={classes.image} src={logo} height="50px" alt="MIT logo" />
+          <img className={classes.image} src={logo} height="50px" alt="JSMastery logo" />
         </div>
       ) : null}
     </div>
