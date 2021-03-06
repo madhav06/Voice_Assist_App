@@ -8,6 +8,9 @@ News By Sources, here we fetched **news** from **CNN**
 News By Categories, here we fetched **news** by **category**
 ![News By Categoty](https://github.com/madhav06/projectImages/blob/master/alan_ai_category_03.png)
 
+Alan AI Configuration and Code
+![Alan AI](https://github.com/madhav06/projectImages/blob/master/alan_ai_backend_04.png)
+
 ## Introduction
 
 This is a code repository for the Voice Controlled News Application, Made in React JS and Alan AI.
